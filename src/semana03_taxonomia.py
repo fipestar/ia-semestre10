@@ -18,41 +18,37 @@ class Category:
 
 CATEGORIES = [
     Category("Visión por computador", (
-        "imagen", "imagenes", "foto", "fotografia", "fotografias", "camara",
-        "rostro", "rostros", "peaton", "peatones", "senal", "senales"
+        "imagen",
+        "imagenes",
+        "foto",
+        "camara"
     )),
-    Category("Procesamiento de lenguaje natural", (
-        "texto", "comentario", "comentarios", "correo", "correos", "chatbot",
-        "contrato", "contratos", "nombres", "lenguaje"
-    )),
+
     Category("Aprendizaje automático predictivo", (
-        "predecir", "probabilidad", "demanda", "fraude", "fraudes", "sensores"
+        "predecir",
+        "prediccion",
+        "probabilidad",
+        "demanda"
     )),
-    Category("Sistemas de recomendación", (
-        "recomendar", "preferencias", "historial de visualizacion", "sugerir"
-    )),
+
     Category("Búsqueda y optimización", (
-        "ruta", "rutas", "horario", "horarios", "combinacion optima",
-        "optimizar", "capacidad maxima"
+        "optimizar",
+        "priorizar",
+        "prioridad"
     )),
+
     Category("Sistemas expertos", (
-        "diagnostico", "diagnosticos", "reglas", "politicas",
-        "solicitud de credito"
-    )),
-    Category("Robótica y sistemas autónomos", (
-        "robot", "robots", "dron", "drones",
-        "vehiculo autonomo", "obstaculos"
+        "reglas",
+        "decision",
+        "condicion"
     )),
 ]
-
-
 # Cinco reglas de ejemplo.
 # Cada estudiante debe reemplazarlas o ampliarlas con cinco reglas propias
 # y justificar el cambio en reports/semana03.md.
 CUSTOM_RULES = {
     "Visión por computador": (
         "reconocimiento visual",
-        "visualmente",
         "unidades visibles",
         "estanteria",
         "empaque"
@@ -68,10 +64,10 @@ CUSTOM_RULES = {
 
     "Búsqueda y optimización": (
         "presupuesto limitado",
-        "priorizar",
-        "criticidad",
         "presupuesto maximo",
-        "capacidad disponible"
+        "criticidad",
+        "capacidad disponible",
+        "combinacion de productos"
     ),
 
     "Sistemas expertos": (
@@ -117,7 +113,7 @@ MANUAL_REFERENCE = [
 ]
 
 
-def normalize(text: str) -> str:
+def normalize(text: str) -> str: #Limpia el texto antes de buscar palabras clave, eliminando acentos, caracteres especiales y espacios extra.
     text = text.strip().lower()
     text = unicodedata.normalize("NFD", text)
     text = "".join(
@@ -142,7 +138,7 @@ def contains_keyword(text: str, keyword: str) -> bool:
     return f" {normalized_keyword} " in normalized_text
 
 
-def build_categories() -> list[Category]:
+def build_categories() -> list[Category]: #Mezcla las categorías base con las reglas personalizadas para crear una lista final de categorías y palabras clave.
     result = []
 
     for category in CATEGORIES:
@@ -158,7 +154,7 @@ def build_categories() -> list[Category]:
     return result
 
 
-def classify_problem(
+def classify_problem( #Clasifica un caso de inventario según las categorías y palabras clave definidas, devolviendo la categoría principal, todas las categorías detectadas y un diccionario con los puntajes de coincidencia.
     text: str
 ) -> tuple[str, list[str], dict[str, int]]:
 
@@ -200,7 +196,7 @@ def classify_problem(
     )
 
 
-def read_cases() -> list[str]:
+def read_cases() -> list[str]: #Lee el archivo CSV de casos de inventario y devuelve una lista de descripciones de casos, asegurando que haya al menos 20 casos válidos.
 
     if not CSV_FILE.exists():
         raise FileNotFoundError(
@@ -255,7 +251,7 @@ def read_cases() -> list[str]:
     return cases
 
 
-def write_report(results: list[dict]) -> None:
+def write_report(results: list[dict]) -> None: #Genera el markdown del reporte de resultados, comparando la clasificación automática con la referencia manual y calculando la precisión.
 
     REPORT_FILE.parent.mkdir(
         parents=True,
