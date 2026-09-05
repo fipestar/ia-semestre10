@@ -1,0 +1,10 @@
+Cuando el stock actual está por debajo del stock mínimo, el producto debe ser considerado para reposición.
+Cuando un producto no tiene unidades disponibles, su estado se considera agotado y requiere reposición inmediata.
+Los productos de alta rotación deben revisarse con mayor frecuencia para evitar faltantes.
+Si el stock disponible es suficiente y supera el mínimo definido, no se requiere reposición inmediata.
+Cuando quedan pocas unidades y la demanda reciente es alta, el producto debe recibir una prioridad mayor de reposición.
+Los productos críticos para la operación deben priorizarse incluso cuando existan restricciones de presupuesto.
+El conteo visual de unidades puede utilizarse como evidencia para comparar la disponibilidad física con el stock esperado.
+Una diferencia entre unidades visibles y stock registrado puede indicar la necesidad de realizar una revisión del inventario.
+Los productos con bajo stock pero poca rotación pueden tener una prioridad menor que los productos de alta demanda.
+El stock objetivo representa la cantidad deseada de unidades después de realizar una reposición.
