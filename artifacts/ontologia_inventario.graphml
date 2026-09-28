@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d0" for="edge" attr.name="rel" attr.type="string" />
+  <graph edgedefault="directed">
+    <node id="producto" />
+    <node id="estado_inventario" />
+    <node id="observacion_inventario" />
+    <node id="modelo_mlp" />
+    <node id="prediccion_inventario" />
+    <node id="reposicion" />
+    <node id="observacion_1" />
+    <node id="prediccion_1" />
+    <node id="estado_prioridad" />
+    <edge source="producto" target="estado_inventario">
+      <data key="d0">tiene_estado</data>
+    </edge>
+    <edge source="estado_inventario" target="reposicion">
+      <data key="d0">puede_requerir</data>
+    </edge>
+    <edge source="observacion_inventario" target="producto">
+      <data key="d0">describe</data>
+    </edge>
+    <edge source="modelo_mlp" target="observacion_inventario">
+      <data key="d0">analiza</data>
+    </edge>
+    <edge source="modelo_mlp" target="prediccion_inventario">
+      <data key="d0">produce</data>
+    </edge>
+    <edge source="prediccion_inventario" target="estado_inventario">
+      <data key="d0">asigna_estado</data>
+    </edge>
+    <edge source="observacion_1" target="prediccion_1">
+      <data key="d0">genera</data>
+    </edge>
+    <edge source="observacion_1" target="producto">
+      <data key="d0">describe</data>
+    </edge>
+    <edge source="prediccion_1" target="estado_prioridad">
+      <data key="d0">asigna_estado</data>
+    </edge>
+  </graph>
+</graphml>
