@@ -1,0 +1,10 @@
+repeticion,semilla,modelo,accuracy,fit_seconds
+1,42,Logistic Regression,0.8,0.006845199968665838
+1,42,Random Forest,1.0,0.4092596999835223
+1,42,MLPClassifier,0.8,0.24918929999694228
+2,43,Logistic Regression,0.8,0.004552600032184273
+2,43,Random Forest,0.8,0.3703393999603577
+2,43,MLPClassifier,0.8,0.2281867999699898
+3,44,Logistic Regression,0.8,0.006878499989397824
+3,44,Random Forest,0.8,0.3589182000141591
+3,44,MLPClassifier,0.8,0.24881980003556237
