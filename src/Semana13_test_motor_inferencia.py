@@ -1,4 +1,4 @@
-"""Pruebas automáticas para el motor lógico de Semana 13."""
+"""Pruebas automáticas para motor lógico de Semana 13."""
 
 import unittest
 

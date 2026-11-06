@@ -22,7 +22,7 @@ def inferir(
 ) -> tuple[set[str], list[str]]:
     """Encadenamiento hacia adelante hasta alcanzar un punto fijo.
 
-    Devuelve una nueva base de hechos y una traza por cada conclusión nueva.
+    Devuelve una nueva base de hechos y una traza por cada conclusion nueva.
     No altera el conjunto recibido ni infiere negaciones por ausencia.
     """
     hechos = set(hechos_iniciales)
