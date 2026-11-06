@@ -110,5 +110,5 @@ fig.savefig(
 plt.close(fig)
 
 print("\nForma del arreglo:", features_total.shape)
-print("Guardado: artifacts/semana10_features.npy")
+print("Guardado: artifacts/ 10_features.npy")
 print("Guardado: artifacts/semana10_histograma.png")
